@@ -1,0 +1,19 @@
+{% extends "main.html" %}
+
+{% block page_name %}
+Wiki Pages
+{% endblock %}
+
+{% block content %}
+<h1 class="page-title">Pages Contained in This Wiki</h1>
+
+<p>Choose a page below to learn more about cats on skis.</p>
+
+<ul class="page-list">
+    {% for page in all_pages %}
+    <li class="page-list-item">
+        <a href="{{ url_for('pages', name=page) }}">{{ page }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
